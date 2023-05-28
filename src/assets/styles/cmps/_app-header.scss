@@ -1,0 +1,112 @@
+.app-header-container {
+    background-color: $clr2;
+    position: fixed;
+    width: 100%;
+    // padding: 10px 0;
+
+    svg{
+        fill:$clr3;
+    }
+
+    .app-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .toggle-menu-btn {
+        display: none;
+
+        @media (max-width: $mobile-size) {
+            display: flex;
+            background-color: $clr2;
+            border: none;
+        }
+    }
+
+    .toggle-menu-btn.hide-btn {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .toggle-menu-screen {
+        display: block;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        background: rgba(42, 42, 42, 0.6);
+        z-index: 4;
+        opacity: 0.5;
+        visibility: hidden;
+        cursor: pointer;
+        transition: opacity .5s;
+    }
+
+    .toggle-menu-screen.close-nav {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    a.logo {
+        height: 64px;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        z-index: 5;
+
+        @media (max-width: $mobile-size) {
+            position: fixed;
+            flex-direction: column;
+            transform: translate(-100%, 0);
+            background-color: $clr2;
+            visibility: hidden;
+        }
+    }
+
+    .open {
+        transform: translate(0, 0);
+        visibility: visible;
+        left: 0;
+        top: 0;
+        height: 100vh;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+
+        a {
+            display: flex;
+            height: 100%;
+            padding: 20px 18px;
+            position: relative;
+        }
+
+        a:hover {
+            background-color: lighten($clr2, 10%);
+        }
+
+        span {
+            background-color: rgba($clr1, 0.875);
+            position: absolute;
+            border-radius: 50%;
+            font-size: 14px;
+            width: 16px;
+            height: 16px;
+            text-align: center;
+            right: 10px;
+            top: 15px;
+        }
+    }
+
+    nav {
+        display: flex;
+        direction: ltr;
+    }
+}

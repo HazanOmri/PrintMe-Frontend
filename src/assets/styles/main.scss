@@ -1,0 +1,27 @@
+// Setup
+@import "setup/_variables";
+@import "setup/_mixins";
+// @import "setup/_functions";
+// @import "setup/_typography";
+
+// // Basics
+@import "basics/_basic";
+@import "basics/_layout";
+
+//PAGES
+@import 'pages/home';
+@import 'pages/tests';
+// @import 'pages/liked';
+@import 'pages/cart';
+// @import 'pages/edit';
+// @import 'pages/login-signup';
+
+
+//CMPS
+@import 'cmps/_app-header';
+@import 'cmps/app-footer';
+@import 'cmps/package-card';
+@import 'cmps/item-list';
+// @import 'cmps/item-details';
+@import 'cmps/user-msg';
+@import 'cmps/hero';

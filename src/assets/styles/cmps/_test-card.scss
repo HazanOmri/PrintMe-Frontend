@@ -1,0 +1,20 @@
+.test-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    direction: rtl;
+    text-align: center;
+    align-items: center;
+    padding: 3px 0;
+
+    .test-date {
+        grid-column: 1/2;
+    }
+
+    .price {
+        grid-column: 2/3;
+    }
+
+    .action {
+        grid-column: 3/4;
+    }
+}

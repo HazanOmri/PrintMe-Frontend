@@ -1,17 +1,31 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { ItemList } from "../cmps/item-list"
+import { ogdanService } from "../services/ogdan.service"
 import { userService } from "../services/user.service"
 
 export function Cart() {
     const user = useSelector(storeState => storeState.userModule.user)
-    const [cart, setCart] = useState({})
+    const [ogdans, setOgdans] = useState([])
+    const [tests, setTests] = useState([])
 
     useEffect(() => {
-        setCart(userService.getCart())
+        divideCart()
     }, [user])
 
+    function divideCart() {
+        let ogdanList = []
+        let testList = []
+        Object.keys(user.cart).forEach(key => {
+            if (key.charAt(0) === 'o') ogdanList.push(ogdanService.get(key))
+            else testList.push(key)
+        })
+        console.log('ogdanList', ogdanList)
+        setOgdans(ogdanList)
+        setTests(testList)
+    }
+
     return <section className="cart">
-        {cart.items?.length ? <ItemList ogdans={cart.items} tests = {['ספטמבר 2017']}/> : <h1>סל הפריטים שלך ריק...</h1>}
+        {Object.keys(user.cart).length ? <ItemList ogdans={ogdans} tests={tests} /> : <h1>סל הפריטים שלך ריק...</h1>}
     </section>
 }

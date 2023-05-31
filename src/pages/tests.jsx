@@ -12,9 +12,9 @@ export function Tests() {
     return tests && <section className="tests">
         <section className="tests-container">
             <div className="header">
-                <p>מועד</p>
+                <p className="time">מועד</p>
                 <p>מחיר</p>
-                <p>סל</p>
+                <p className="on-off-cart">סל</p>
             </div>
             {tests.map((test, idx) => {
                 if (idx < tests.length / 2)
@@ -24,7 +24,7 @@ export function Tests() {
         </section>
         <section className="tests-container">
             <div className="header">
-                <p>מועד</p>
+                <p className="time">מועד</p>
                 <p>מחיר</p>
                 <p>סל</p>
             </div>

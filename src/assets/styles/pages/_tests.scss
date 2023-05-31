@@ -18,8 +18,13 @@
         background-color: $clr2;
     }
 
+    .time {
+        text-align: start;
+        margin-inline-start: 10px;
+    }
+
     .tests-container {
-        width: 35vw;
+        width: 40vw;
         border: 1px solid black;
         height: fit-content;
 

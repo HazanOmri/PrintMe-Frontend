@@ -8,6 +8,8 @@
 
     .test-date {
         grid-column: 1/2;
+        text-align: start;
+        margin: 10px;
     }
 
     .price {
@@ -16,5 +18,29 @@
 
     .action {
         grid-column: 3/4;
+        display: flex;
+        justify-content: center;
+    }
+
+    .add {
+        display: flex;
+        height: 36px;
+        width: 36px;
+        cursor: pointer;
+        background-color: $clr3;
+        border-radius: 50%;
+        fill: $clr2;
+        padding: 6px;
+    }
+
+    .remove {
+        display: flex;
+        height: 36px;
+        width: 36px;
+        cursor: pointer;
+        background-color: $clr5;
+        border-radius: 50%;
+        fill: $clr2;
+        padding: 6px;
     }
 }

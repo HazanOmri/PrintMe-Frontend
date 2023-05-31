@@ -20,15 +20,32 @@
         font-size: 18px;
     }
 
-    svg {
+    .add {
         position: absolute;
         left: 10px;
         top: 13px;
+        display: flex;
+        height: 36px;
+        width: 36px;
         cursor: pointer;
         background-color: $clr3;
         border-radius: 50%;
-        padding: 4px;
         fill: $clr2;
+        padding: 6px;
+    }
+
+    .remove {
+        position: absolute;
+        left: 10px;
+        top: 13px;
+        display: flex;
+        height: 36px;
+        width: 36px;
+        cursor: pointer;
+        background-color: $clr5;
+        border-radius: 50%;
+        fill: $clr2;
+        padding: 6px;
     }
 
     span {

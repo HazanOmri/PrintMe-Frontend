@@ -29,6 +29,7 @@
 
 .user-msg.add-item {
     background-color: $cta;
+    color: $clr1;
 }
 
 .user-msg.like-item {
@@ -37,6 +38,6 @@
 
 .user-msg.remove-item,
 .user-msg.unlike-item {
-    background-color: darken($clr1, 10%);
+    background-color: darken($clr2, 30%);
     color: black;
 }

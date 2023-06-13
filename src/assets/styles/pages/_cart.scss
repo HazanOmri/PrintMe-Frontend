@@ -1,3 +1,17 @@
 .cart {
     direction: rtl;
+
+    .confirm {
+        margin: 10px 0;
+        padding: 7px 10px;
+        border-radius: 4px;
+        border: none;
+        box-shadow: 0 2px 9px 0 rgb(0 0 0 / 20%);
+        background-color: $cta;
+        color: $clr2;
+    }
+
+    .summary {
+        margin: 30px 0;
+    }
 }

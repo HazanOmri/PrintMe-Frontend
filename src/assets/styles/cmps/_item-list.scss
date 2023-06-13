@@ -1,7 +1,13 @@
 .list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    direction: rtl;
-    margin: 25px 20px;
+    .ogdan-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        direction: rtl;
+        margin: 10px 0;
+    }
+
+    .test-card{
+        max-width: 35vw;
+    }
 }

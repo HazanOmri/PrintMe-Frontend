@@ -19,9 +19,7 @@ export const userService = {
     update,
     getEmptyCredentials,
     getEmptyUser,
-    // getLiked,
-    getCart,
-    updateUsers,
+    getCartSum,
 }
 
 window.userService = userService
@@ -78,32 +76,14 @@ function getEmptyUser() {
     return { id: utilService.makeId(), fullname: '', cart: {} }
 }
 
-function getCart() {
+function getCartSum() {
     const cart = getLoggedinUser().cart
-    console.log()
-    let items = []
     let sum = 0
     for (const id in cart) {
         let item = ogdanService.get(id)
         if (item === undefined) item = { id: testService.get(id), price: 5 }
-        items.push(item)
         sum += item.price * cart[id]
     }
-    return { items, sum }
+    return sum
 }
 
-async function updateUsers(removedItemId) {
-    const users = await getUsers()
-    users.forEach(user => {
-        console.log('orinting all useres', user)
-        if (user.liked.includes(removedItemId)) {
-            const newLiked = user.liked.filter(likedId => likedId !== removedItemId)
-            console.log('new user:', { ...user, liked: newLiked })
-            update({ ...user, liked: newLiked })
-        }
-        if (user.cart[removedItemId]) {
-            delete user.cart[removedItemId]
-            update({ ...user })
-        }
-    })
-}

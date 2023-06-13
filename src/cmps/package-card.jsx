@@ -9,7 +9,7 @@ export function PackageCard({ ogdan }) {
     const user = useSelector(storeState => storeState.userModule.user)
 
     useEffect(() => {
-        console.log('user.cart.items', user.cart.items)
+        console.log('user.cart', user.cart)
     }, [])
 
     return <section className="package-card">

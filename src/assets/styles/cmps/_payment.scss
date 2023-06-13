@@ -1,0 +1,19 @@
+.payment {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+    label {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    input[type=text] {
+        margin-right: 10px;
+    }
+
+    .method {
+        direction: ltr;
+    }
+}

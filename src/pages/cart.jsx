@@ -33,6 +33,6 @@ export function Cart() {
             <h1>סה״כ לתשלום: ₪{userService.getCartSum()}</h1>
             <button className="confirm" onClick={() => setPayment(true)}>אישור ומעבר לתשלום</button>
         </div>
-        {payment && <Payment />}
+        {payment && <Payment cart={user.cart} />}
     </section>
 }

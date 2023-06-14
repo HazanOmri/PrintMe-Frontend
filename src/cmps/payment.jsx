@@ -1,6 +1,7 @@
 import { useState } from "react"
+import { httpService } from "../services/http.service"
 
-export function Payment() {
+export function Payment({ cart }) {
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
@@ -9,6 +10,11 @@ export function Payment() {
         if (target.className === 'fullname') setFullName(target.value)
         if (target.className === 'email') setEmail(target.value)
         if (target.className === 'phone') setEmail(target.value)
+    }
+
+    async function checkout() {
+        console.log('cart', cart)
+        await httpService.post('checkout', cart)
     }
 
     return <form className="payment" onSubmit={() => console.log('fullName', fullName)}>
@@ -29,6 +35,6 @@ export function Payment() {
                 <input type="radio" id="deliver" name="method" />
             </label>
         </label>
-        <button className="submit">אישור</button>
+        <button className="submit" onClick={() => checkout()}>אישור</button>
     </form>
 }

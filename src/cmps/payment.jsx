@@ -1,10 +1,12 @@
 import { useState } from "react"
 import { httpService } from "../services/http.service"
+import { useNavigate } from "react-router-dom"
 
 export function Payment({ cart }) {
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
+    const navigate = useNavigate()
 
     function handleChange({ target }) {
         if (target.className === 'fullname') setFullName(target.value)
@@ -13,11 +15,15 @@ export function Payment({ cart }) {
     }
 
     async function checkout() {
-        console.log('cart', cart)
-        await httpService.post('checkout', cart)
+        try {
+            const res = await httpService.post('checkout', cart)
+            window.location = res.url.url
+        } catch (err) {
+            console.log('error', err)
+        }
     }
 
-    return <form className="payment" onSubmit={() => console.log('fullName', fullName)}>
+    return <form className="payment" onSubmit={() => checkout()}>
         <label htmlFor="fullname"> שם  מלא
             <input type="text" id="fullname" className="fullname" onChange={handleChange} />
         </label>
@@ -35,6 +41,6 @@ export function Payment({ cart }) {
                 <input type="radio" id="deliver" name="method" />
             </label>
         </label>
-        <button className="submit" onClick={() => checkout()}>אישור</button>
+        <button className="submit">אישור</button>
     </form>
 }

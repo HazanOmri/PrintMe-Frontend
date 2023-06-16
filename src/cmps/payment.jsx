@@ -18,6 +18,7 @@ export function Payment({ cart }) {
         try {
             const res = await httpService.post('checkout', cart)
             window.location = res.url.url
+            console.log('res.url.url', res.url.url)
         } catch (err) {
             console.log('error', err)
         }

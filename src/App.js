@@ -9,6 +9,8 @@ import { AppHeader } from './cmps/app-header.jsx'
 import { AppFooter } from './cmps/app-footer.jsx'
 import { Tests } from './pages/tests'
 import { UserMsg } from './cmps/user-msg'
+import { Success } from './pages/success'
+import { Cancel } from './pages/cancel'
 
 
 export default function App() {
@@ -22,6 +24,8 @@ export default function App() {
             <Route element={<About />} path='/about' />
             <Route element={<Cart />} path='/cart' />
             <Route element={<Tests />} path='/tests' />
+            <Route element={<Success />} path='/success' />
+            <Route element={<Cancel />} path='/cancel' />
           </Routes>
           <UserMsg />
         </main>

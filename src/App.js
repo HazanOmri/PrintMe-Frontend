@@ -11,6 +11,7 @@ import { Tests } from './pages/tests'
 import { UserMsg } from './cmps/user-msg'
 import { Success } from './pages/success'
 import { Cancel } from './pages/cancel'
+import { LoginSignup } from './pages/login-signup'
 
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
             <Route element={<Tests />} path='/tests' />
             <Route element={<Success />} path='/success' />
             <Route element={<Cancel />} path='/cancel' />
+            <Route element={<LoginSignup />} path='/loginSingup' />
           </Routes>
           <UserMsg />
         </main>

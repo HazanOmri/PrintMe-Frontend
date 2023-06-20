@@ -22,7 +22,7 @@ export function PackageCard({ ogdan }) {
             </div >
         }
         <h2>{ogdan.title}</h2>
-        <span>האוגדן מכיל {ogdan.amount} בחינות</span>
+        <span>האוגדן מכיל את  {ogdan.amount} הבחינות אחרונות</span>
         <img src={coverImg} alt="---" />
         <h4>מחיר: ₪{ogdan.price}</h4>
     </section>

@@ -2,7 +2,7 @@
     background-color: $clr2;
     position: fixed;
     width: 100%;
-    // padding: 10px 0;
+    z-index: 99;
 
     svg{
         fill:$clr3;

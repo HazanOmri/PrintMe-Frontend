@@ -12,6 +12,7 @@ import { UserMsg } from './cmps/user-msg'
 import { Success } from './pages/success'
 import { Cancel } from './pages/cancel'
 import { LoginSignup } from './pages/login-signup'
+import { Admin } from './pages/admin'
 
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
             <Route element={<Success />} path='/success' />
             <Route element={<Cancel />} path='/cancel' />
             <Route element={<LoginSignup />} path='/loginSingup' />
+            <Route element={<Admin />} path='/admin' />
           </Routes>
           <UserMsg />
         </main>

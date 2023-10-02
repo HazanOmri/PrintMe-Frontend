@@ -6,6 +6,10 @@
     direction: rtl;
     gap: 30px;
 
+    @media (max-width:$mobile-size) {
+        padding-top: 20px;
+    }
+
     .header {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -16,6 +20,10 @@
         padding: 5px 0;
         text-align: center;
         background-color: $clr2;
+        
+        @media (max-width:$mobile-size) {
+            font-size: 16px;
+        }
     }
 
     .time {

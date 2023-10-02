@@ -25,14 +25,14 @@ export function Payment({ cart }) {
     }
 
     return <form className="payment" onSubmit={() => checkout()}>
-        <label htmlFor="fullname"> שם  מלא
-            <input type="text" id="fullname" className="fullname" onChange={handleChange} />
+        <label htmlFor="fullname" className="required-field"> <p>שם  מלא </p>
+            <input type="text" id="fullname" required className="fullname" onChange={handleChange} />
         </label>
-        <label htmlFor="email"> דוא״ל
-            <input type="text" id="email" className="email" onChange={handleChange} />
+        <label htmlFor="email" className="required-field"> דוא״ל
+            <input type="text" id="email" required className="email" onChange={handleChange} />
         </label>
-        <label htmlFor="phone"> מספר נייד
-            <input type="text" id="phone" className="phone" onChange={handleChange} />
+        <label htmlFor="phone" className="required-field"> מספר נייד
+            <input type="text" id="phone" required className="phone" onChange={handleChange} />
         </label>
         <label className="method">
             <label htmlFor="collect"> איסוף

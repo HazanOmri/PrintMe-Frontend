@@ -1,13 +1,19 @@
 .list {
     .ogdan-list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
         gap: 20px;
         direction: rtl;
         margin: 10px 0;
+
+        @media (max-width:$mobile-size) {
+            display: flex;
+            flex-direction: column;
+
+        }
     }
 
-    .test-card{
+    .test-card {
         max-width: 35vw;
     }
 }

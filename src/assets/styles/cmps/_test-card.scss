@@ -5,11 +5,20 @@
     text-align: center;
     align-items: center;
     padding: 3px 0;
+    
+    @media (max-width:$mobile-size) {
+        // justify-items: center;
+        font-size: 14px;
+    }
 
     .test-date {
         grid-column: 1/2;
         text-align: start;
         margin: 10px;
+
+        @media (max-width:$mobile-size) {
+            margin: 8px 4px 8px 0;
+        }
     }
 
     .price {
@@ -22,6 +31,14 @@
         justify-content: center;
     }
 
+    svg {
+        @media (max-width:$mobile-size) {
+            height: 22px;
+            width: 22px;
+            margin: 2px;
+        }
+    }
+
     .add {
         display: flex;
         height: 36px;
@@ -31,6 +48,12 @@
         border-radius: 50%;
         fill: $clr2;
         padding: 6px;
+
+        @media (max-width:$mobile-size) {
+            height: 32px;
+            width: 32px;
+            padding: 4px;
+        }
     }
 
     .remove {
@@ -42,5 +65,11 @@
         border-radius: 50%;
         fill: $clr2;
         padding: 6px;
+
+        @media (max-width:$mobile-size) {
+            height: 32px;
+            width: 32px;
+            padding: 4px;
+        }
     }
 }

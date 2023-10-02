@@ -1,7 +1,27 @@
 import { Link, NavLink } from 'react-router-dom';
+import { useRef } from 'react';
+
 import logo from '../assets/imgs/logo.jpeg'
 
 export function AppHeader() {
+    const elBtnRef = useRef(null)
+    const elScreenRef = useRef(null)
+    const elUlRef = useRef(null)
+
+    function toggleMenu() {
+        if (!elBtnRef.current) elBtnRef.current = document.querySelector('.toggle-menu-btn')
+        if (!elScreenRef.current) elScreenRef.current = document.querySelector('.toggle-menu-screen')
+        if (!elUlRef.current) elUlRef.current = document.querySelector('ul')
+        elBtnRef.current.classList.toggle('hide-btn')
+        elScreenRef.current.classList.toggle('close-nav')
+        elUlRef.current.classList.toggle('open')
+        let elImgInput = document.querySelector('.input-img-container')
+        let elCatInput = document.querySelector('.multi-selector')
+        if (elImgInput) elImgInput.classList.toggle('to-back')
+        if (elCatInput) elCatInput.classList.toggle('to-back')
+
+    }
+
     return <section className="app-header-container full main-app">
         <div className="app-header">
             <Link to="/" className="logo">
@@ -38,15 +58,15 @@ export function AppHeader() {
                         </NavLink>
                     </li>
                 </ul>
-                {/* <button className="toggle-menu-btn" onClick={toggleMenu}> */}
-                {/* <svg fill="#000000" width="20px" height="20px" viewBox="0 0 24.75 24.75" >
+                <button className="toggle-menu-btn" onClick={toggleMenu}>
+                <svg fill="#000000" width="20px" height="20px" viewBox="0 0 24.75 24.75" >
                         <g>
                             <path d="M0,3.875c0-1.104,0.896-2,2-2h20.75c1.104,0,2,0.896,2,2s-0.896,2-2,2H2C0.896,5.875,0,4.979,0,3.875z M22.75,10.375H2   c-1.104,0-2,0.896-2,2c0,1.104,0.896,2,2,2h20.75c1.104,0,2-0.896,2-2C24.75,11.271,23.855,10.375,22.75,10.375z M22.75,18.875H2   c-1.104,0-2,0.896-2,2s0.896,2,2,2h20.75c1.104,0,2-0.896,2-2S23.855,18.875,22.75,18.875z" />
                         </g>
-                    </svg> */}
-                {/* </button> */}
+                    </svg>
+                </button>
             </nav>
-            {/* <div className="toggle-menu-screen" onClick={toggleMenu}></div> */}
+            <div className="toggle-menu-screen" onClick={toggleMenu}></div>
         </div>
     </section>
 }

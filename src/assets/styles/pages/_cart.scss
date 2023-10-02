@@ -1,6 +1,10 @@
 .cart {
     direction: rtl;
 
+    @media (max-width: $mobile-size) {
+        padding-top: 20px;
+    }
+
     .confirm {
         margin: 10px 0;
         padding: 7px 10px;

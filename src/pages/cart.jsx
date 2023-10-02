@@ -27,11 +27,16 @@ export function Cart() {
         setTests(testList)
     }
 
+    function advanceToPayment({target}) {
+        target.style = 'display:none'
+        setPayment(true)
+    }
+
     return <section className="cart">
         {Object.keys(user.cart).length ? <ItemList ogdans={ogdans} tests={tests} /> : <h1>סל הפריטים שלך ריק...</h1>}
         <div className="summary">
             <h1>סה״כ לתשלום: ₪{userService.getCartSum()}</h1>
-            <button className="confirm" onClick={() => setPayment(true)}>אישור ומעבר לתשלום</button>
+            <button className="confirm" onClick={(ev) => advanceToPayment(ev)}>אישור ומעבר לתשלום</button>
         </div>
         {payment && <Payment cart={user.cart} />}
     </section>
